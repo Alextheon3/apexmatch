@@ -1,0 +1,657 @@
+# ============================================
+# ApexMatch Git Ignore Configuration
+# Comprehensive file exclusion patterns
+# ============================================
+
+# ==========================================
+# Environment & Configuration Files
+# ==========================================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+config.local.py
+secrets.json
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# ==========================================
+# Python
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+.idea/
+
+# ==========================================
+# Node.js & Frontend
+# ==========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage
+.grunt
+
+# Bower dependency directory
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons
+build/Release
+
+# Dependency directories
+jspm_packages/
+
+# Snowpack dependency directory
+web_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+out
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+storybook-static
+
+# Temporary folders
+tmp/
+temp/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==========================================
+# Database Files
+# ==========================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+postgresql_data/
+mysql_data/
+redis_data/
+
+# ==========================================
+# Media & Upload Files
+# ==========================================
+media/
+uploads/
+static_files/
+user_uploads/
+profile_photos/
+chat_attachments/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.svg
+*.webp
+*.ico
+*.pdf
+*.doc
+*.docx
+*.mp4
+*.mov
+*.avi
+*.mp3
+*.wav
+
+# Except placeholder/default images
+!assets/images/placeholder.png
+!assets/images/default-avatar.jpg
+!public/favicon.ico
+
+# ==========================================
+# Logs & Monitoring
+# ==========================================
+logs/
+*.log
+*.log.*
+log-*.txt
+debug.log
+error.log
+access.log
+combined.log
+app.log
+server.log
+celery.log
+gunicorn.log
+nginx.log
+
+# Sentry
+.sentryclirc
+
+# New Relic
+newrelic.ini
+
+# ==========================================
+# Docker & Containers
+# ==========================================
+.dockerignore
+docker-compose.override.yml
+.docker/
+Dockerfile.local
+*.tar
+*.tar.gz
+
+# ==========================================
+# Cloud & Deployment
+# ==========================================
+# AWS
+.aws/
+*.pem
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+*.tfplan
+
+# Kubernetes
+*.kubeconfig
+k8s-secrets.yml
+
+# Helm
+*.tgz
+charts/*/charts/
+charts/*/requirements.lock
+
+# ==========================================
+# Development Tools
+# ==========================================
+# VS Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# JetBrains IDEs
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# ==========================================
+# Operating Systems
+# ==========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ==========================================
+# Backup & Temporary Files
+# ==========================================
+*.bak
+*.backup
+*.tmp
+*.temp
+*.old
+*.orig
+*.rej
+*.patch
+*.diff
+*~
+.#*
+#*#
+
+# ==========================================
+# SSL Certificates
+# ==========================================
+*.crt
+*.key
+*.pem
+*.p12
+*.pfx
+ssl/
+certs/
+certificates/
+
+# ==========================================
+# Cache & Runtime
+# ==========================================
+.cache/
+cache/
+.tmp/
+tmp/
+temp/
+runtime/
+sessions/
+.sass-cache/
+.webpack/
+.parcel-cache/
+
+# ==========================================
+# Monitoring & Analytics
+# ==========================================
+*.pid
+*.seed
+*.pid.lock
+pids/
+
+# Prometheus data
+prometheus_data/
+
+# Grafana data
+grafana_data/
+
+# ==========================================
+# Machine Learning Models
+# ==========================================
+*.model
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+models/
+checkpoints/
+tensorboard_logs/
+
+# ==========================================
+# Testing
+# ==========================================
+test_reports/
+coverage_reports/
+screenshots/
+test_output/
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# ==========================================
+# Documentation
+# ==========================================
+docs/_build/
+docs/build/
+site/
+_site/
+
+# ==========================================
+# Localization
+# ==========================================
+*.mo
+locale/*/LC_MESSAGES/*.mo
+
+# ==========================================
+# Misc
+# ==========================================
+.vagrant/
+*.box
+.bundle/
+vendor/bundle/
+
+# ctags
+tags
+.tags
+TAGS
+
+# etags
+TAGS
+
+# GNU Global
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+
+# Ctags
+tags
+*.tags
+
+# Cscope
+cscope.files
+cscope.in.out
+cscope.out
+cscope.po.out
+
+# GNU idutils
+ID
+
+# TextMate
+*.tmproj
+*.tmproject
+tmtags
+
+# Xcode
+*.xcworkspace
+*.xcodeproj
+
+# Android
+*.ap_
+*.aab
+*.apk
+*.dex
+local.properties
+
+# iOS
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Flutter
+**/android/local.properties
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# ==========================================
+# Custom ApexMatch Exclusions
+# ==========================================
+# User data (never commit real user data)
+user_data/
+test_users/
+production_data/
+seed_data/real_users.json
+
+# AI training data
+training_data/
+ml_models/
+ai_cache/
+
+# Payment test data
+stripe_test_data/
+payment_logs/
+
+# Photo processing cache
+image_cache/
+processed_photos/
+thumbnails/
+
+# Chat history (for privacy)
+chat_exports/
+conversation_backups/
+
+# Analytics data
+analytics_data/
+user_metrics/
+business_reports/
+
+# Feature flags configuration
+feature_flags.json
+ab_test_config.json
+
+# Local development databases
+dev.db
+test.db
+local.db
+
+# Performance profiling
+*.prof
+profiling_results/
+performance_logs/
+
+# Security scanning results
+security_scan_results/
+vulnerability_reports/
+
+# Load testing
+load_test_results/
+stress_test_data/
+
+# Backup files
+database_backups/
+code_backups/
+*.sql.gz
+
+# Monitoring configs (may contain sensitive data)
+monitoring_config/
+alerting_rules/
+
+# Local scripts (may contain credentials)
+local_scripts/
+deployment_scripts/local_*

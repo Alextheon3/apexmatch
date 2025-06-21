@@ -1,0 +1,796 @@
+/* src/styles/reveal-stages.css - Reveal system specialized animations */
+
+/* ========================================
+   APEXMATCH REVEAL SYSTEM STYLES
+   Revolutionary Photo Reveal Experience
+   ======================================== */
+
+/* ========================================
+   REVEAL STAGE CONTAINER
+   ======================================== */
+
+.reveal-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f23, #1a1a2e, #16213e);
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+.reveal-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   STAGE 1: PREPARATION
+   ======================================== */
+
+.stage-preparation {
+  text-align: center;
+}
+
+.preparation-heart {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+.preparation-heart::before,
+.preparation-heart::after {
+  content: '';
+  width: 60px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  background: linear-gradient(135deg, #9333ea, #ec4899);
+  border-radius: 60px 60px 0 0;
+  transform-origin: 0 100%;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+.preparation-heart::after {
+  left: 0;
+  transform: translateX(-50%) rotate(45deg);
+  transform-origin: 100% 100%;
+  animation-delay: 0.1s;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: translateX(-50%) rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) rotate(-45deg) scale(1.1);
+  }
+}
+
+.preparation-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #9333ea, #ec4899, #f59e0b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(147, 51, 234, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.8));
+  }
+}
+
+.preparation-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  animation: subtitleFade 2s ease-in-out infinite alternate;
+}
+
+@keyframes subtitleFade {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.preparation-progress {
+  width: 300px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 2rem auto;
+}
+
+.preparation-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9333ea, #ec4899);
+  border-radius: 3px;
+  animation: preparationProgress 3s ease-in-out forwards;
+}
+
+@keyframes preparationProgress {
+  0% { width: 0%; }
+  100% { width: 70%; }
+}
+
+/* ========================================
+   STAGE 2: INTENTION SETTING
+   ======================================== */
+
+.stage-intention {
+  text-align: center;
+}
+
+.intention-symbol {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 2rem;
+  position: relative;
+  animation: intentionRotate 4s linear infinite;
+}
+
+.intention-symbol::before {
+  content: '🌟';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  animation: intentionPulse 2s ease-in-out infinite;
+}
+
+@keyframes intentionRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes intentionPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+.intention-text {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  animation: intentionTextReveal 2s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes intentionTextReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   STAGE 3: MUTUAL READINESS
+   ======================================== */
+
+.stage-readiness {
+  text-align: center;
+}
+
+.readiness-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+
+.readiness-user,
+.readiness-match {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.readiness-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #374151, #6b7280);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  position: relative;
+  transition: all 500ms ease;
+}
+
+.readiness-avatar.ready {
+  background: linear-gradient(135deg, #10b981, #059669);
+  animation: readyPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes readyPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.8);
+  }
+}
+
+.readiness-connection {
+  position: relative;
+  width: 100px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.readiness-connection-flow {
+  height: 100%;
+  background: linear-gradient(90deg, #9333ea, #ec4899);
+  border-radius: 2px;
+  animation: connectionFlow 2s ease-in-out infinite;
+}
+
+@keyframes connectionFlow {
+  0% {
+    width: 0%;
+    opacity: 0.5;
+  }
+  50% {
+    width: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 0%;
+    opacity: 0.5;
+    margin-left: 100%;
+  }
+}
+
+.mutual-readiness-message {
+  font-size: 1.25rem;
+  color: #10b981;
+  font-weight: 600;
+  margin-top: 2rem;
+  animation: readinessMessageGlow 2s ease-in-out infinite;
+}
+
+@keyframes readinessMessageGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.8);
+  }
+}
+
+/* ========================================
+   STAGE 4: THE REVEAL COUNTDOWN
+   ======================================== */
+
+.stage-countdown {
+  text-align: center;
+}
+
+.countdown-circle {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+.countdown-circle svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.countdown-circle .bg-circle {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 8;
+}
+
+.countdown-circle .progress-circle {
+  fill: none;
+  stroke: url(#countdownGradient);
+  stroke-width: 8;
+  stroke-linecap: round;
+  animation: countdownProgress 3s linear forwards;
+}
+
+@keyframes countdownProgress {
+  0% {
+    stroke-dasharray: 0 628;
+  }
+  100% {
+    stroke-dasharray: 628 628;
+  }
+}
+
+.countdown-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+  animation: countdownPulse 1s ease-in-out;
+}
+
+@keyframes countdownPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.countdown-message {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  animation: countdownMessageBounce 0.5s ease-out;
+}
+
+@keyframes countdownMessageBounce {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   STAGE 5: THE REVEAL MOMENT
+   ======================================== */
+
+.stage-reveal {
+  text-align: center;
+}
+
+.reveal-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 2rem 0;
+  perspective: 1000px;
+}
+
+.reveal-card {
+  width: 200px;
+  height: 280px;
+  position: relative;
+  cursor: pointer;
+}
+
+.reveal-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.reveal-card.flipped .reveal-card-inner {
+  transform: rotateY(180deg);
+}
+
+.reveal-card-front,
+.reveal-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.reveal-card-front {
+  background: linear-gradient(135deg, #374151, #6b7280);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+}
+
+.reveal-card-back {
+  background: white;
+  transform: rotateY(180deg);
+}
+
+.reveal-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reveal-celebration {
+  margin-top: 2rem;
+  animation: celebrationBurst 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes celebrationBurst {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.celebration-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.celebration-heart {
+  position: absolute;
+  font-size: 2rem;
+  color: #ec4899;
+  animation: heartFloat 3s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes heartFloat {
+  0% {
+    opacity: 1;
+    transform: translateY(100vh) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(50vh) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20vh) scale(0.5);
+  }
+}
+
+.celebration-heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.celebration-heart:nth-child(2) { left: 30%; animation-delay: 0.5s; }
+.celebration-heart:nth-child(3) { left: 50%; animation-delay: 1s; }
+.celebration-heart:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+.celebration-heart:nth-child(5) { left: 90%; animation-delay: 2s; }
+
+/* ========================================
+   STAGE 6: INTEGRATION & REFLECTION
+   ======================================== */
+
+.stage-integration {
+  text-align: center;
+}
+
+.integration-glow {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.8), rgba(236, 72, 153, 0.6), transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: integrationGlow 3s ease-in-out infinite;
+}
+
+@keyframes integrationGlow {
+  0%, 100% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: blur(2px);
+  }
+}
+
+.integration-symbol {
+  font-size: 3rem;
+  color: white;
+  animation: integrationSymbolRotate 4s linear infinite;
+}
+
+@keyframes integrationSymbolRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.integration-message {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  animation: integrationMessageFade 2s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes integrationMessageFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   SHARED REVEAL ELEMENTS
+   ======================================== */
+
+.reveal-button {
+  background: linear-gradient(135deg, #9333ea, #ec4899);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 300ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(147, 51, 234, 0.4);
+}
+
+.reveal-button:active {
+  transform: translateY(0);
+}
+
+.reveal-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 500ms ease;
+}
+
+.reveal-button:hover::before {
+  left: 100%;
+}
+
+.reveal-progress-bar {
+  width: 100%;
+  max-width: 400px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 2rem auto;
+}
+
+.reveal-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9333ea, #ec4899);
+  border-radius: 4px;
+  transition: width 500ms ease;
+}
+
+.reveal-stage-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.stage-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 300ms ease;
+}
+
+.stage-dot.active {
+  background: linear-gradient(135deg, #9333ea, #ec4899);
+  transform: scale(1.5);
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.6);
+}
+
+.stage-dot.completed {
+  background: #10b981;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .reveal-cards-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .reveal-card {
+    width: 160px;
+    height: 220px;
+  }
+  
+  .readiness-indicator {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .readiness-connection {
+    width: 4px;
+    height: 60px;
+  }
+  
+  .preparation-title {
+    font-size: 2rem;
+  }
+  
+  .countdown-circle {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .countdown-number {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reveal-stage {
+    padding: 1rem;
+  }
+  
+  .preparation-title {
+    font-size: 1.75rem;
+  }
+  
+  .preparation-subtitle,
+  .intention-text,
+  .integration-message {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .reveal-card {
+    width: 140px;
+    height: 200px;
+  }
+  
+  .countdown-circle {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .countdown-number {
+    font-size: 2.5rem;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .preparation-heart::before,
+  .preparation-heart::after,
+  .intention-symbol,
+  .readiness-avatar.ready,
+  .countdown-circle .progress-circle,
+  .celebration-heart,
+  .integration-glow,
+  .integration-symbol {
+    animation: none;
+  }
+  
+  .reveal-card-inner {
+    transition: none;
+  }
+  
+  .reveal-button {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .reveal-container {
+    background: #000;
+  }
+  
+  .preparation-title,
+  .countdown-message,
+  .integration-message {
+    color: #fff;
+    text-shadow: none;
+  }
+  
+  .reveal-button {
+    border: 2px solid #fff;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .reveal-container {
+    background: white;
+    color: black;
+  }
+  
+  .celebration-hearts,
+  .reveal-stage-indicator {
+    display: none;
+  }
+  
+  .reveal-card-front,
+  .reveal-card-back {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}
